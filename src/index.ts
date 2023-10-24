@@ -24,17 +24,9 @@ import log from './utils/logger'
 app.use('/task', Documents)
 app.use('/user', User)
 
-setInterval(() => {
-	const cpuUsage = process.cpuUsage()
-	const memoryUsage = process.memoryUsage()
-
-	console.log('======System Info======' + new Date().toLocaleString())
-
-	console.log(`Heap Total: ${Math.round(memoryUsage.heapTotal / (1024 * 1024))} MB`)
-	console.log(`Heap Used: ${Math.round(memoryUsage.heapUsed / (1024 * 1024))} MB`)
-	console.log(`RSS: ${Math.round(memoryUsage.rss / (1024 * 1024))} MB`)
-	console.log(`External: ${Math.round(memoryUsage.external / (1024 * 1024))} MB`)
-}, 5000) // Log every 5 seconds
+app.get('/', (req, res) => {
+	res.send('Hello World!')
+})
 
 connectDB()
 app.listen(PORT, () => {
