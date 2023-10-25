@@ -20,5 +20,5 @@
 		"esModuleInterop": true,
 		"pretty": true
 	},
-	"include": ["src/**/*"]
+	"include": ["./api/*.ts", "src/**/*"]
 }

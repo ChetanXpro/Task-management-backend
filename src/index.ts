@@ -32,3 +32,5 @@ connectDB()
 app.listen(PORT, () => {
 	log.info(`Server running on port ${PORT}`)
 })
+
+export default app
